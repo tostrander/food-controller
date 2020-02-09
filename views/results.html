@@ -1,0 +1,10 @@
+<include href="views/header.html">
+<body>
+    <h1>Thank you for your order!</h1>
+
+    <h2>You ordered {{ @SESSION.food }} for {{ @SESSION.meal }}</h2>
+    <check if="{{ isset(@SESSION.conds) }}">
+        <h3>Condiments: {{ implode(", ", @SESSION.conds) }}</h3>
+    </check>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<include href="views/header.html">
+<body>
+<h1>Food Order</h1>
+<form method="post" action="#">
+    <p>Which meal?<br>
+        <repeat group="{{ @meals }}" value="{{ @meal }}">
+            <label><input type="radio" name="meal"
+                          value="{{ @meal }}"
+            <check if="{{ @meal == @selectedMeal }}">
+                selected="selected"
+            </check>
+            >{{ ucfirst(@meal) }}</label><br>
+        </repeat>
+    </p>
+    <check if="{{ isset(@errors['meal']) }}">
+        <span>{{ @errors['meal'] }}</span>
+    </check><br>
+    <input type="submit" value="Next >>">
+</form>
+</body>
+</html>

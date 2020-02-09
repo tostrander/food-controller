@@ -1,0 +1,21 @@
+<include href="views/header.html">
+<body>
+<h1>Food Order</h1>
+<form method="post" action="#">
+    <p>Select Condiments<br>
+        <repeat group="{{ @condiments }}" value="{{ @cond }}">
+            <label><input type="checkbox" name="conds[]"
+                          value="{{ @cond }}"
+            <check if="in_array({{ @cond }}, {{ @selectedCondiments }})">
+                checked="checked"
+            </check>
+            >{{ ucfirst(@cond) }}</label><br>
+        </repeat>
+    </p>
+    <check if="{{ isset(@errors['conds']) }}">
+        <span>{{ @errors['conds'] }}</span>
+    </check><br>
+    <input type="submit" value="Next >>">
+</form>
+</body>
+</html>

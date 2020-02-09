@@ -1,0 +1,15 @@
+<include href="views/header.html">
+<body>
+    <h1>Food Order</h1>
+    <form method="post" action="#">
+        <label>What would you like to order?
+            <input type="text" name="food"
+                   value="{{ @food }}">
+        </label>
+        <check if="{{ isset(@errors['food']) }}">
+            <span>{{ @errors['food'] }}</span>
+        </check><br>
+        <input type="submit" value="Next >>">
+    </form>
+</body>
+</html>
