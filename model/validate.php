@@ -6,6 +6,8 @@
  * Time: 11:31 AM
  */
 
+class Validate
+{
     /* Return a value indicating if the param is a valid food
        Valid foods are not empty and do not contain numbers
        @param String $food
@@ -54,3 +56,4 @@
         }
         return true;
     }
+}
